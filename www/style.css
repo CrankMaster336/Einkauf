@@ -401,6 +401,25 @@ body{
 }
 .saveLayer{
     display:none;
+    position: absolute;
+    top: 0px;
+    width: 300px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    height: 100%;
+}
+.saveLayer .header p{
+    margin-top: 0px;
+}
+.loadLayer{
+    display:none;
+    position: absolute;
+    top: 0px;
+    width: 300px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    height: 100%;
+}
+.loadLayer .header p{
+    margin-top: 0px;
 }
 .status{
     position: absolute;
@@ -415,45 +434,40 @@ body{
     padding:5px;
 }
 .fileName{
-	position: absolute;
-	right: 49px;
-	border: solid 1px #8CC154;
-	top: 0px;
-	height: 46px;
-	width: 229px;
-	top:-51px;
+    border: solid 1px #8CC154;
+    height: 50px !important;
+    width: 224px !important;
+    float: left !important;
+    margin: 0 !important;
 }
 .saveName{
-	position: absolute;
-	right: 0px;
-	top:-50px;
-	height: 50px;
-	width: 50px;
-	background-color: #8CC154;
-	background-image: url("img/check.png");
-	background-repeat: no-repeat;
-	background-position: 17px 15px;
-	background-size: 20px 20px;
+    height: 54px;
+    width: 50px;
+    background-color: #8CC154;
+    background-image: url("img/check.png");
+    background-repeat: no-repeat;
+    background-position: 17px 15px;
+    background-size: 20px 20px;
+    float: left;
 }
 .saveList{
-	position: absolute;
-	top: 109px;
-	width: 280px;
+    width: 276px;
+    margin-left: 10px;
 }
 .saveItem{
-	background-color:#fff;
-	border:solid 1px #8CC154;
-	margin-left:-1px;
+    background-color:#fff;
+    border:solid 1px #8CC154;
+    margin-left:-1px;
 }
 .saveList p{
-	padding: 0;
-	margin: 0;
-	position: relative;
-	top:10px;
-	font-weight: bold;
-	font-size: 25px;
-	color: #95a5a6;	
-	margin-left: 10px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top:10px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #95a5a6;	
+    margin-left: 10px;
 	
 }
 .saveList .loadIconLeft{

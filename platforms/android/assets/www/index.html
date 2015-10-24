@@ -7,8 +7,9 @@
         <title>Kaufsystem</title>
         <script src="js/jquery.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/velocity.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="items.css">
+        <link rel="stylesheet" type="text/css" href="items.css">        
     </head>
     <body>
         <div class="content">
@@ -66,9 +67,6 @@
                         <div class="Save saveIcon"></div>           
                         <div class="Load loadIcon"></div>  
                         <div class="settingsIcon"></div>  
-                        <input class="fileName"></input>
-                        <div class="saveName"></div>
-                        <div class="saveList"></div>
                         <div class="clear"></div>
                     </div>
                     <div class="bongitem">
@@ -104,9 +102,18 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="blockUIContent saveLayer">
-                <div class="header"><p>Ein neues Item Hinzufügen</p></div>
+            <div class="blockUIContent loadLayer">
+                <div class="header"><p>Konfiguration Laden</p></div>
                 <div class="loadContent"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="blockUIContent saveLayer">
+                <div class="header"><p>Konfiguration Speichern</p></div>    
+                <div style="width: 279px;height: 53px;margin: 10px 0px 10px 9px;">
+                    <input class="fileName" />
+                    <div class="saveName"></div>
+                </div>
+                <div class="saveList"></div>
                 <div class="clear"></div>
             </div>
         </div>

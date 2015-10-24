@@ -128,19 +128,21 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".blockUIClose", function () {
-        $('.blockUI').hide();
-        $('.saveLayer').hide();
-        $('.addLayer').hide();
+        $('.blockUI').velocity({ opacity: 0 }, { display: "none" });
+        $('.saveLayer').velocity({left: -300});
+        $('.loadLayer').velocity({left: -300});
+        $('.addLayer').velocity({left: -300});        
     });
     $(document).on("click", ".blockUIBackground", function () {
-        $('.blockUI').hide();
-        $('.saveLayer').hide();
-        $('.addLayer').hide();
+        $('.blockUI').velocity({ opacity: 0 }, { display: "none" });
+        $('.loadLayer').velocity({left: -300});
+        $('.addLayer').velocity({left: -300});
+        $('.saveLayer').velocity({left: -300});
     });
     $(document).on("click", ".addNewIcon", function () {
-        $('.blockUI').show();
+        $('.blockUI').velocity({ opacity: 1 }, { display: "block" });
         $('.addLayer').css({left: "-300px"});
-        $('.addLayer').animate({left: "0px"});
+        $('.addLayer').velocity({left: 0});
         $('.addLayer').show();
     });
 
@@ -194,6 +196,13 @@ $(document).ready(function () {
     /*                       SAVE                      */
     /***************************************************/
     $(document).on('click', '.Save', function () {
+        
+        
+        $('.blockUI').velocity({ opacity: 1 }, { display: "block" });
+        $('.saveLayer').css({left: "-300px"});
+        $('.saveLayer').velocity({left: 0});
+        $('.saveLayer').show();
+        
         $('.saveList').html("");
         for (var i = 0, len = localStorage.length; i < len; i++) {
             var key = localStorage.key(i);
@@ -202,20 +211,6 @@ $(document).ready(function () {
             if (split[0] == "KaufSafe") {
                 $('.saveList').append('<div class="saveItem"><div class="loadIconLeft"><div class="triggerLoad" data_js="' + split[1] + '"></div></div><p>' + split[1] + '</p></div>');
             }
-        }
-
-
-
-        if (!$(this).hasClass('StopSave')) {
-            $('.saveName').animate({ 'top': '+=99px' });
-            $('.fileName').animate({ 'top': '+=100px' });
-            $('.Save').addClass('StopSave');
-            $('.saveIcon').css('background-image', 'url(img/uploadStop.png)')
-        } else {
-            $('.saveName').animate({ 'top': '-=100px' });
-            $('.fileName').animate({ 'top': '-=100px' });
-            $('.Save').removeClass('StopSave');
-            $('.saveIcon').css('background-image', 'url(img/save.png)');
         }
     });
 
@@ -235,10 +230,6 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.status').animate({ 'top': '-=50px' });
         }, 1000);
-        $('.saveName').animate({ 'top': '-=100px' });
-        $('.fileName').animate({ 'top': '-=100px' });
-        $('.Save').removeClass('StopSave');
-        $('.saveIcon').css('background-image', 'url(img/save.png)');
     });
 
 
@@ -273,8 +264,10 @@ $(document).ready(function () {
     /***************************************************/
 
     $(document).on("click", ".Load", function () {
-        $('.blockUI').show();
-        $('.saveLayer').show();
+        $('.blockUI').velocity({ opacity: 1 }, { display: "block" });
+        $('.loadLayer').css({left: "-300px"});
+        $('.loadLayer').velocity({left: 0});
+        $('.loadLayer').show();
     });
 
     $(document).on('click', '.Load', function () {
