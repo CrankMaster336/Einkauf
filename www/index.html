@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <title>Kaufsystem</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="items.css">
+        
+    </head>
+    <body>
+        <div class="content">
+			<div class="debug"></div>
+            <div class="wrapper contentWrapper" style="width: 100%;height: auto;float: left;">
+                <div class="settings">
+                    <div class="bongWrapperWidth">
+                        <p>-</p>
+                        <input type="number" class="widthMaker" value="280" max="600" min="280"/> 
+                        <p>+</p>
+                    </div>
+                    <div class="iconWrapperWidth">
+                        <p>-</p>
+				        <input type="number" class="iconWidth" value="30" max="60" min="30"/> 
+                        <p>+</p>
+                    </div>
+                    <div class="closeIcon"></div>
+                </div>
+                <div class="search">                    
+                    <input type="text" placeholder="Product suche" onchange="hideIcon(this);" class="suche" />
+                    <div class="searchicon"></div>
+                </div>
+                <div class="scroller">
+                    <div class="itemwrapper">
+                        <div class="items" id="Items"></div>                     
+                    </div>
+                </div>
+                <div class="Category">
+                    <div class="links"></div> 
+                    <div class="rechts"></div>                     
+                    <div class="cats">
+                        <div class="catscroller">
+                            <ul>
+                                <li class="active"><p>Alle Produkte</p></li>
+                                <li><p>Essen</p></li>
+                                <li><p>Nicht Alkoholisch</p></li>
+                                <li><p>Alkoholisch</p></li>
+                                <li><p>Alkoholisch</p></li>
+                                <li><p>Alkoholisch</p></li>
+                                <li><p>Alkoholisch</p></li>                               
+                            </ul>
+                        </div>
+                    </div>
+                          
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="wrapper rightwrapper" style="width: 281px;height: auto;float: right;padding-right: 1px;">
+                <div class="Abrechnung">
+                    <div class="bongeinstellung">
+                        <div class="Del"></div>
+                        <div class="addNewIcon"></div>
+                        <div class="removeIcon remove"></div>
+                        <div class="Save saveIcon"></div>           
+                        <div class="Load loadIcon"></div>  
+                        <div class="settingsIcon"></div>  
+                        <input class="fileName"></input>
+                        <div class="saveName"></div>
+                        <div class="saveList"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="bongitem">
+                        <table id="Bongitem">
+                        
+                        </table>
+                    </div>
+                    <div class="Summe">
+                        <p class="summenFont">Summe:</p>
+                        <div class="Gessumme">0,00€</div>             
+                    </div>
+                </div>
+                <div class="send"><p>SENDEN</p></div>
+                <div class="clearItems"></div>
+            </div>
+            
+        </div>
+        <div class="clear"></div>
+        <div class="blockUI" style="display: none">
+            <div class="blockUIBackground"></div>    
+            <div class="blockUIContent addLayer">
+                <div class="header"><p>Ein neues Item Hinzufügen</p></div>
+                <div class="form">
+                    <input type="text" placeholder="Item Name" class="name">
+                    <input type="text" placeholder="Item Preis" class="preis">
+                    <select name="type" size="1" class="type">
+                      <option>Essen</option>
+                      <option>Trinken Nicht Alkoholisch</option>
+                      <option>Trinken Alkoholisch</option>
+                    </select>
+                    <div id="addNew" class="addNew"><p>Add new Item</p></div>
+                    <div id="blockUIClose" class="blockUIClose"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="blockUIContent saveLayer">
+                <div class="header"><p>Ein neues Item Hinzufügen</p></div>
+                <div class="loadContent"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+		<div class="status"></div>
+    </body>
+</html>

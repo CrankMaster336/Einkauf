@@ -1,0 +1,60 @@
+.water{
+    background-color:#00c0e4;
+}
+.waterbg{
+    background-image: url(../img/items/alk.png);
+    opacity: 0.1;
+    height: 116px;
+    width: 116px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: 26px 0px;
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    background-size: 100px;
+    left: 30px;
+    top:30px;
+}
+.foot{
+    background-color:#eac14d;
+}
+.footbg{
+   background-image: url(../img/items/foot.png);
+    opacity: 0.1;
+    height: 116px;
+    width: 116px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: 26px 0px;
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    background-size: 100px auto;
+    left: -40px;
+    top: 30px;
+}
+.waterAlk{
+    background-color:#eac14d;
+}
+.waterAlkbg{
+   background-image: url(../img/items/alk.png);
+    opacity: 0.1;
+    height: 116px;
+    width: 116px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: 26px 0px;
+    transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    background-size: 100px auto;
+    left: -40px;
+    top: 30px;
+}
