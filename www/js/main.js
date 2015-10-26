@@ -10,6 +10,8 @@ $(document).ready(function () {
     var width = $('.contentWrapper').width();
     var newwidth = width - defaultWidth;
     var windowHeight = $(window).height();
+	var widthScroller = 0;
+	var curItemWidth;
 
     $('.contentWrapper').css('width', newwidth);
     abrechnungHeight = windowHeight - 64; 			// Die höhe Für rechts die Abrechnung 
@@ -69,8 +71,13 @@ $(document).ready(function () {
     $(document).on('click', '.closeIcon', function () {
         $('.settings').animate({ top: -windowHeight });
     });
-
-
+	
+	$('.catscroller > ul > li').each(function (){
+		curItemWidth = $(this).width();
+		widthScroller = widthScroller + curItemWidth;
+	});
+	widthScroller = widthScroller + 50;
+	$('.catscroller > ul').width(widthScroller);
 
     /*************************************/
     /*           Functions               */
@@ -225,13 +232,13 @@ $(document).ready(function () {
             lastItemNr: itemNr
         };
         localStorage.setItem('KaufSafe_' + fileName, JSON.stringify(obj));
-
-        $('.status').css('background-color', '#78818B').html('Gespeichert').animate({ 'top': '+=50px' });
-        setTimeout(function () {
-            $('.status').animate({ 'top': '-=50px' });
-        }, 1000);
+		$('.status').show();
+        $('.status').css('background-color', '#8CC154').html("Erfolgreich gespeichert!").velocity({bottom: 0});
+		setTimeout(function () {
+			$('.status').hide();
+		}, 2000);
     });
-
+	
 
 
     $(document).on('click', '.saveName', function () {
@@ -242,19 +249,21 @@ $(document).ready(function () {
             lastItemNr: itemNr
         };
         if (fileName != "") {
-            $('.status').css('background-color', '#78818B').html('Gespeichert').animate({ 'top': '+=50px' });
-            setTimeout(function () {
-                $('.status').animate({ 'top': '-=50px' });
-            }, 1000);
+			$('.status').show();
+            $('.status').css('background-color', '#8CC154').html("Erfolgreich gespeichert!").velocity({bottom: 0});
+			setTimeout(function () {
+				$('.status').hide();
+			}, 2000);
             localStorage.setItem('KaufSafe_' + fileName, JSON.stringify(obj));
             $('.saveName').animate({ 'top': '-=100px' });
             $('.fileName').animate({ 'top': '-=100px' });
             $('.Save').removeClass('StopSave');
             $('.saveIcon').css('background-image', 'url(img/save.png)');
         } else {
+			$('.status').show();
             $('.status').css('background-color', '#e74c3c').html('Bitte geben sie einen Namen ein.').animate({ 'top': '+=50px' });
             setTimeout(function () {
-                $('.status').animate({ 'top': '-=50px' });
+                $('.status').hide();
             }, 2000);
         }
     });
@@ -295,6 +304,11 @@ $(document).ready(function () {
                 itemNr = parsed['lastItemNr'];
             }
         }
+		$('.status').show();
+		$('.status').css('background-color', '#8CC154').html("Erfolgreich geladen!").velocity({bottom: 0});
+		setTimeout(function () {
+			$('.status').hide();
+		}, 2000);
     });
     /***************************************************/
     /*                 Produkt Suche                   */
@@ -331,4 +345,27 @@ $(document).ready(function () {
         $('.addNewIcon').css({ 'width': iconswidth + 'px', 'height': iconswidth + 'px', 'background-size': iconswidth + 'px ' + iconswidth + 'px' });
         $('.Del').css({ 'width': iconswidth + 'px', 'height': iconswidth + 'px', 'background-size': iconswidth + 'px ' + iconswidth + 'px' });
     });
+	/***************************************************/
+    /*                 On Clear                        */
+    /***************************************************/
+	
+	$(document).on('click', '.clearItems', function (){
+		$('#Bongitem').html("");
+		$('.Gessumme').html("0.00€")
+	});
 });
+
+
+
+
+/*********DEBUG*******/
+
+
+	function callStatus(Text) {
+		$('.status').show();
+		$('.status').css('background-color', '#8CC154').html(Text).velocity({bottom: 0});
+		setTimeout(function () {
+			$('.status').hide();
+		}, 2000);
+	}	
+		
